@@ -9,6 +9,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     @IBAction func keyPressed(_ sender: UIButton) {
+        
+        print(sender.currentTitle)
         playAudioFromProject()
     }
     
@@ -18,8 +20,8 @@ class ViewController: UIViewController {
             return
         }
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.play()
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.play()
         } catch {
             print("audio file error")
         }
